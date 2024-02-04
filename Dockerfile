@@ -2,7 +2,7 @@ FROM rust as builder
 
 RUN cargo install doh-proxy
 
-FROM debian:buster
+FROM debian:bookworm
 
 COPY --from=builder /usr/local/cargo/bin/doh-proxy /usr/local/bin/doh-proxy
 
